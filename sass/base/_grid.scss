@@ -1,0 +1,31 @@
+$columns: 12;
+$site-width: 1000px;
+$gutter: 5px;
+$tablet_up: "screen and (min-width: 450px)";
+
+.container {
+    width: 100vw;
+    margin: 0 auto;
+    max-width: $site-width;
+
+    .row {
+        margin: 0;
+        @include clear();
+
+        [class*="col-"] {
+            float:left;
+            min-height: 1px;
+            width: 100%;
+            padding: 0 $gutter;
+        }
+
+        @for $i from 1 through $columns {
+            .col-#{$i} {
+                @media #{$tablet-up} {
+                    width: (100%/$columns)*$i;
+                }
+            }
+        }
+
+    }
+}

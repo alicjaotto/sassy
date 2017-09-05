@@ -1,0 +1,59 @@
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.hidden {
+    display: none;
+}
+
+//sekcje
+.section__news {
+    @include section-margins(2rem, 1rem, 2rem, 1rem);
+    background: $primary-color;
+
+    h1 {
+        font-size: $big-font-size;
+    }
+    p {
+        font-size: $normal-font-size;
+        padding: 2rem 0;
+    }
+}
+
+.section__olds {
+    @include section-margins(1.5rem, 1rem, 2rem, 1rem);
+
+    h2 {
+        font-size: $medium-font-size;
+    }
+}
+
+.section__importants {
+    padding: 1rem 0;
+
+    span {
+        font-size: $medium-font-size;
+        color: $secondary-color;
+        padding-left: 2rem;
+    }
+}
+
+.pink {
+    background-color: $primary-color;
+}
+
+//buttony
+%buttons { //to jest extend dla wszystkich buttonów
+    background-color: $secondary-color;
+}
+
+.section__news__button--big {
+    @extend %buttons;
+    @include size(10rem, 10rem);
+}
+
+.section__olds__button--small {
+    @extend %buttons;
+    @include size(7rem, 4rem);
+}
